@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "memsprout": {
+      "type": "http",
+      "url": "https://mcp.memsprout.com/mcp"
+    }
+  }
+}
