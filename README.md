@@ -62,6 +62,9 @@ memsprout/                           the plugin
   .claude-plugin/plugin.json         plugin manifest
   .mcp.json                          remote MCP server config
   skills/using-memsprout/SKILL.md    usage skill
+mcp-registry/                        official MCP Registry manifest + publish runbook
+  server.json
+  PUBLISH.md
 ```
 
 ## Support
