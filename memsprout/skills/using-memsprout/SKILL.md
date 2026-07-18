@@ -19,17 +19,17 @@ not a temporary scratchpad.
 
 ## The one rule
 
-Store memories liberally, but omit the title by default. Everything you
-record — observations, conclusions, summaries, decisions, even polished
-write-ups and finished task results — goes through `store_memory` without
-a title (a raw capture). Raw captures are cheap; no polish needed.
+Store memories liberally, and default to giving each one a concise,
+descriptive title — especially anything durable: a decision, a procedure,
+a fact, a conclusion worth finding by name later, and anything going into
+a shared space. A title costs little and buys a lot: it makes a memory
+individually retrievable, auditable, and readable on its own.
 
-A titled memory is a deliberate authoring act. Add a title only when the
-user explicitly asks for a durable, on-the-record write-up ("write this
-up", "document this", "save this as a procedure"). Your own sense that
-something is important or finished does not qualify — a raw capture holds
-all of that fine. You can promote a raw capture later by adding a title
-via `update_memory` once the user asks.
+Leave the title off only for genuinely raw, ephemeral personal captures —
+a stream-of-consciousness note, a voice memo, a half-formed idea not
+meant to stand alone. Raw captures are cheap; no polish needed. You can
+promote one later by adding a title via `update_memory` once it's clear
+the memory is worth naming.
 
 ## Search first
 
@@ -46,20 +46,28 @@ via `update_memory` once the user asks.
 2. When capturing into a space, check `list_topics` first and pass the
    best-fitting topic — don't rely on auto-classification as your first
    move.
-3. Capture as raw memories (no title) — this covers almost everything,
-   including the durable conclusion at the end of a task.
-4. Add a title only when the user explicitly asks for a curated write-up.
+3. Give most memories a concise, descriptive title as you capture them —
+   especially durable conclusions and anything going into a shared
+   space. This is the default, not an extra step.
+4. Reserve untitled captures for genuinely raw, ephemeral personal
+   fragments.
 5. Attach supporting files as assets on the relevant memory.
 
 Be proactive: search at the start of a task and capture durable
-conclusions at the end without waiting to be asked. Treat memsprout as
-part of how the user thinks, not as an optional tool.
+conclusions at the end — titled, so they're findable later — without
+waiting to be asked. Treat memsprout as part of how the user thinks, not
+as an optional tool.
 
 ## Spaces and topics
 
 Spaces are shared collaboration containers with member roles (owner /
 editor / viewer). Pass `space_id` to `store_memory` to capture into a
 space; omit it for the user's personal vault.
+
+Privacy rule: only pass a shared `space_id` when the user has named that
+Space by name in the current conversation — never resolve or infer a
+shared destination on your own. No named Space → omit `space_id`, which
+always defaults to personal, the safe default.
 
 Every space memory is assigned to a topic. When capturing into a space,
 check `list_topics` and pass the best-fitting existing topic — you know
