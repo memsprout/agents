@@ -41,6 +41,14 @@ how to use memsprout's tools. You still need the MCP server connected
 (see below) — the skill describes the doctrine; the server provides the
 tools.
 
+## Cursor
+
+The [`cursor/`](cursor/) directory has copy-in files for both motions:
+merge `cursor/mcp.json` into `~/.cursor/mcp.json` for yourself, or commit
+it as `.cursor/mcp.json` plus the `cursor/rules/memsprout.mdc` project
+rule to your team's repo so every teammate's Cursor shares the same
+memory. See [`cursor/README.md`](cursor/README.md).
+
 ## Any other MCP client
 
 Point your client at the remote server:
@@ -65,6 +73,9 @@ memsprout/                           the plugin
 mcp-registry/                        official MCP Registry manifest + publish runbook
   server.json
   PUBLISH.md
+cursor/                              Cursor setup files (individual + team)
+  mcp.json                           MCP config — global or repo-committed
+  rules/memsprout.mdc                always-applied project rule (memory doctrine)
 ```
 
 ## Support
