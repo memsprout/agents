@@ -1,0 +1,55 @@
+---
+description: memsprout is the team's persistent memory over MCP — search it before assuming context is missing, capture durable conclusions when work ends.
+alwaysApply: true
+---
+
+# Using memsprout
+
+memsprout is this team's persistent memory, connected as an MCP server.
+What you write there is read later by the user, by teammates in shared
+spaces, and by other AI agents across many tools. They trust it — treat
+it as shared memory, not a temporary scratchpad.
+
+## Search first
+
+- Call `search_memories` before assuming something isn't recorded, and
+  before storing anything, so you don't create duplicates. It searches
+  everything you can read by default.
+- Use `list_memories` for recency browsing instead of meaning-based
+  lookup.
+- At the start of a substantive task, search memsprout for relevant
+  prior context.
+
+## Capturing
+
+Store memories liberally with `store_memory`, and default to giving each
+one a concise, descriptive title — especially anything durable: a
+decision, a procedure, a fact, a conclusion worth finding by name later,
+and anything going into a shared space. Leave the title off only for
+genuinely raw, ephemeral captures — a half-formed idea or fragment not
+meant to stand alone. You can promote a raw capture later by adding a
+title via `update_memory`.
+
+At the end of a task, capture the durable conclusion — titled, so it's
+findable later — without waiting to be asked.
+
+Memories are versioned: `update_memory` archives the prior state with an
+optional `change_note`, so revise freely — history is never lost.
+
+## Spaces and topics
+
+Spaces are shared containers with member roles. Pass `space_id` to
+`store_memory` for shared work; omit it for the user's personal vault.
+Only pass a shared `space_id` when the user has named that Space in the
+current conversation — never infer a shared destination. No named Space
+means omit `space_id`, which defaults to personal.
+
+Every space memory is assigned to a topic. When capturing into a space,
+check `list_topics` and pass the best-fitting existing topic; if nothing
+fits, `create_topic` first (with a description). Omit the topic only as
+a last resort — the server auto-classifies as a backup.
+
+## Files
+
+Files attach to memories as assets: `get_signed_upload_url` → PUT the
+bytes → `attach_asset` with the `storage_path` and `memory_id`.

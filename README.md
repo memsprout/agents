@@ -14,6 +14,18 @@ Create an account at [memsprout.com](https://memsprout.com) first. The
 OAuth sign-in that opens when a client first connects does **not** create
 accounts — it only signs in existing ones.
 
+## One-command setup
+
+```
+npx memsprout
+```
+
+Detects your installed MCP clients (Claude Code, Codex, Gemini CLI,
+Cursor), wires each selected one to the server, and offers to scaffold
+the team files into your repo. Non-destructive, idempotent, stores no
+credentials. Source in [`installer/`](installer/). Not yet published to
+npm — until it is, use the per-client instructions below.
+
 ## Claude Code
 
 ```
@@ -76,6 +88,7 @@ mcp-registry/                        official MCP Registry manifest + publish ru
 cursor/                              Cursor setup files (individual + team)
   mcp.json                           MCP config — global or repo-committed
   rules/memsprout.mdc                always-applied project rule (memory doctrine)
+installer/                           npx installer (npm package "memsprout")
 ```
 
 ## Support
