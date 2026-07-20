@@ -19,6 +19,6 @@ const read = (rel) => readFileSync(new URL(rel, import.meta.url), 'utf8');
 // test/content-parity.test.js.
 export const cursorRules = () => read('../content/memsprout.mdc');
 
-// Team snippet for AGENTS.md. Product-repo ticket #538 will ship the
-// canonical AGENTS-snippet.md; converge on that file when it lands.
+// Verbatim copy of ../../codex/AGENTS-snippet.md — enforced by
+// test/content-parity.test.js.
 export const agentsSnippet = () => read('../content/AGENTS-snippet.md');

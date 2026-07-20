@@ -61,6 +61,19 @@ it as `.cursor/mcp.json` plus the `cursor/rules/memsprout.mdc` project
 rule to your team's repo so every teammate's Cursor shares the same
 memory. See [`cursor/README.md`](cursor/README.md).
 
+## Codex
+
+```
+codex mcp add memsprout --url https://mcp.memsprout.com/mcp
+```
+
+The Codex CLI, IDE extension, and ChatGPT desktop app share
+`~/.codex/config.toml`, so this one command wires all three. For team
+setup, append the client-agnostic
+[`codex/AGENTS-snippet.md`](codex/AGENTS-snippet.md) to your repo's
+`AGENTS.md` so every AGENTS.md-reading agent follows the team's memory
+doctrine. See [`codex/README.md`](codex/README.md).
+
 ## Any other MCP client
 
 Point your client at the remote server:
@@ -88,6 +101,8 @@ mcp-registry/                        official MCP Registry manifest + publish ru
 cursor/                              Cursor setup files (individual + team)
   mcp.json                           MCP config — global or repo-committed
   rules/memsprout.mdc                always-applied project rule (memory doctrine)
+codex/                               Codex setup (individual + team)
+  AGENTS-snippet.md                  client-agnostic AGENTS.md section (memory doctrine)
 installer/                           npx installer (npm package "memsprout")
 ```
 
