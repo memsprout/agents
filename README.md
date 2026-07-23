@@ -1,5 +1,7 @@
 # memsprout for AI agents
 
+[![smithery badge](https://smithery.ai/badge/memsprout/memsprout)](https://smithery.ai/servers/memsprout/memsprout)
+
 [memsprout](https://memsprout.com) is a shared AI-context layer for teams —
 persistent memory your agents search and update over MCP. Every agent and
 tool you connect reads and writes the same knowledge base, so context
