@@ -1,6 +1,6 @@
 {
   "name": "memsprout",
-  "description": "Shared AI-context layer for teams — persistent memory your agents search and update across sessions and tools.",
+  "description": "Shared AI-context layer for teams — one memory every teammate's agents search and update, so knowledge captured once reaches the whole team across sessions and tools.",
   "version": "0.1.0",
   "author": {
     "name": "memsprout",
